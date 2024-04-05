@@ -118,15 +118,41 @@ getInstruction(
 );
 
 // Iteration 2 - using promises
-// ...
-// Iteration 2 - using promises
-obtainInstruction("steak", 0).then((step0) => {
-  document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
-  //  ... Your code here
-});
 // ... Your code here
+
+obtainInstruction('steak', 0)
+  .then((step0) => {
+    document.querySelector("#steak").innerHTML += `<li>${step0}</li>`;
+    return obtainInstruction('steak', 1); 
+  })
+  .then((step1) => {
+    document.querySelector("#steak").innerHTML += `<li>${step1}</li>`;
+    return obtainInstruction('steak', 2); 
+  })
+  .then((step2) => {
+    document.querySelector("#steak").innerHTML += `<li>${step2}</li>`;
+    return obtainInstruction('steak', 3); 
+  })
+  .then((step3) => {
+    document.querySelector("#steak").innerHTML += `<li>${step3}</li>`;
+    return obtainInstruction('steak', 4); 
+  })
+  .then((step4) => {
+    document.querySelector("#steak").innerHTML += `<li>${step4}</li>`;
+    return obtainInstruction('steak', 5); 
+  })
+  .then((step5) => {
+    document.querySelector("#steak").innerHTML += `<li>${step5}</li>`;
+    document.querySelector("#steak").innerHTML += "<li>Steak is ready!</li>"; 
+  })
+  .catch((error) => {
+    console.error("Therr is an Error:", error); 
+  });
 // Iteration 3 using async/await
-// ...
+async function makeBroccoli() {
+  // ... Your code here
+
+}
 
 // Bonus 2 - Promise all
 // ...
